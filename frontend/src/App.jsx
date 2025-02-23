@@ -6,6 +6,8 @@ import PrimarySearchAppBar from './components/NavBar'
 import Home from './pages/Home'
 import {Routes,Route} from 'react-router-dom'
 import Footer from './components/Footer'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +17,8 @@ function App() {
       <PrimarySearchAppBar></PrimarySearchAppBar>
       <Routes>
         <Route path="/" element={<Home />} />
-       
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<SignUp/>} />
       </Routes>
       <Footer/>
     </>

@@ -82,6 +82,7 @@ const Carousel = () => {
                 href={slide.link}
                 sx={{
                   fontSize: '1.1rem',
+                  backgroundColor:"black",
                   padding: '10px 30px',
                   borderRadius: '25px',
                   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',

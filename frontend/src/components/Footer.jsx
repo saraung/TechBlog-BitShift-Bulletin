@@ -99,7 +99,7 @@ const Footer = () => {
                 type="submit"
                 sx={{ borderRadius: '4px' }}
               >
-                Subscribe
+                Send
               </Button>
             </Box>
           </Grid>
