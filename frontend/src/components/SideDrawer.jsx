@@ -1,18 +1,14 @@
 // components/SideDrawer.jsx
 import React from 'react';
-import { Drawer as MuiDrawer, List, ListItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
-import { Home, Info, Article, ContactMail, Settings } from '@mui/icons-material';
+import { Drawer as MuiDrawer, List, ListItem, ListItemIcon, ListItemText, Divider, Avatar, Box, Typography } from '@mui/material';
+import { Home, AccountCircle, Logout,Article } from '@mui/icons-material';
 
 const SideDrawer = ({ isOpen, onClose }) => {
   const menuItems = [
     { text: 'Home', icon: <Home />, link: '/' },
-    { text: 'About', icon: <Info />, link: '/about' },
-    { text: 'Blog', icon: <Article />, link: '/blog' },
-    { text: 'Contact', icon: <ContactMail />, link: '/contact' },
-  ];
-
-  const settingsItems = [
-    { text: 'Settings', icon: <Settings />, link: '/settings' },
+    { text: 'Blogs', icon: <Article />, link: '/blogs' },
+    { text: 'Account', icon: <AccountCircle />, link: '/account' },
+    { text: 'Logout', icon: <Logout />, link: '/logout' },
   ];
 
   return (
@@ -25,26 +21,27 @@ const SideDrawer = ({ isOpen, onClose }) => {
           width: 250,
           backgroundColor: '#1a1a1a',
           color: '#ffffff',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          height: '100%',
         },
       }}
     >
-      <List>
-        {menuItems.map((item) => (
-          <ListItem button key={item.text} component="a" href={item.link}>
-            <ListItemIcon sx={{ color: '#ffffff' }}>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider sx={{ backgroundColor: '#444' }} />
-      <List>
-        {settingsItems.map((item) => (
-          <ListItem button key={item.text} component="a" href={item.link}>
-            <ListItemIcon sx={{ color: '#ffffff' }}>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.text} />
-          </ListItem>
-        ))}
-      </List>
+      <Box>
+        <List>
+          {menuItems.map((item) => (
+            <ListItem button key={item.text} component="a" href={item.link}>
+              <ListItemIcon sx={{ color: '#ffffff' }}>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.text} sx={{ color: '#ffffff' }} />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+      <Box sx={{ textAlign: 'center', padding: 2 }}>
+        <Avatar sx={{ width: 56, height: 56, margin: 'auto' }} src="/path/to/dummy-avatar.jpg" />
+        <Typography variant="body1" sx={{ color: '#ffffff', marginTop: 1 }}>John Doe</Typography>
+      </Box>
     </MuiDrawer>
   );
 };
