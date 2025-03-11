@@ -64,6 +64,7 @@ const Blogs = () => {
           borderRadius: 2
         }} />
       </Box>
+      
 
       <Grid container spacing={4}>
         {blogs.map((blog) => (
